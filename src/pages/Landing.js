@@ -12,7 +12,7 @@ function Landing() {
       <p>Find the right price for your favorite digital assets.</p>
       <button
         onClick={() => {
-          navigate("./connectwallet");
+          navigate("/connectwalletdemo");
         }}
       >
         Launch App

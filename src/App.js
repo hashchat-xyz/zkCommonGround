@@ -1,7 +1,10 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
-import ConnectWallet from "./pages/ConnectWallet";
+// import ConnectWallet from "./pages/ConnectWallet";
+import ConnectWalletDemo from "../src/pages/ConnectWalletDemo";
+import Home from "../src/pages/Home";
+import OfferBid from "../src/pages/OfferBid";
 import "@rainbow-me/rainbowkit/styles.css";
 import {
   getDefaultWallets,
@@ -35,7 +38,10 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/connectwallet" element={<ConnectWallet />} />
+            {/* <Route path="/connectwallet" element={<ConnectWallet />} /> */}
+            <Route path="/connectwalletdemo" element={<ConnectWalletDemo />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/offerbid" element={<OfferBid />} />
           </Routes>
         </Router>
       </RainbowKitProvider>

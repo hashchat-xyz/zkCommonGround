@@ -1,0 +1,75 @@
+@import "./fonts.css";
+
+.home-container {
+  background-color: #282828;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  min-height: 100%;
+  max-height: fit-content;
+}
+
+.home-main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.available-asset-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 50px 100px;
+  box-shadow: 100px black;
+}
+
+.flag-img {
+  width: 300px;
+  height: 300px;
+}
+
+.rectangle {
+  background-color: black;
+  width: 300px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.asset-words-lol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  margin-left: 9px;
+}
+
+.asset-name {
+  font-family: "semi";
+  font-size: 22px;
+  margin: 0px;
+}
+
+.asset-desc {
+  font-family: "desc";
+  font-size: 12px;
+  margin: 0px;
+}
+
+.view-btn {
+  background: #00bfff;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-family: "med";
+  color: white;
+  padding: 6px 20px;
+  border-radius: 5px;
+  font-size: 10px;
+  margin-top: 8%;
+  margin-right: 12px;
+}
