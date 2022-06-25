@@ -1,0 +1,90 @@
+@import "./fonts.css";
+
+.connect-wallet-container {
+  background-color: #282828;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  height: fit-content;
+}
+
+.top-container {
+  padding: 10px;
+  display: flex;
+  justify-content: right;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.title {
+  font-size: 50px;
+}
+
+.image-container {
+  display: flex;
+  background-color: rgba(0, 191, 255, 0.25);
+  height: 325px;
+  width: 325px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.upload {
+  color: white;
+  font-size: 20px;
+}
+
+.main-text-container {
+  height: 500px;
+  width: 325px;
+  background-color: black;
+}
+
+.sub-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  margin-left: 5px;
+  height: 100px;
+  width: 325px;
+}
+
+.item-name {
+  display: flex;
+  justify-content: left;
+  text-align: left;
+}
+
+.name {
+  font-size: 20px;
+  font-family: "semi";
+  margin: 0px;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 250px;
+  height: 25px;
+  border-radius: 5px;
+  border: none;
+  background-color: #d9d4d4;
+}
