@@ -4,6 +4,7 @@ import Landing from "./pages/Landing";
 // import ConnectWallet from "./pages/ConnectWallet";
 import ConnectWalletDemo from "../src/pages/ConnectWalletDemo";
 import Home from "../src/pages/Home";
+import Seller from "./pages/Seller";
 import OfferBid from "../src/pages/OfferBid";
 import ViewMatch from "../src/pages/ViewMatch";
 import "@rainbow-me/rainbowkit/styles.css";
@@ -42,6 +43,7 @@ function App() {
             {/* <Route path="/connectwallet" element={<ConnectWallet />} /> */}
             <Route path="/connectwalletdemo" element={<ConnectWalletDemo />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/seller" element={<Seller />} />
             <Route path="/offerbid" element={<OfferBid />} />
             <Route path="/viewmatch" element={<ViewMatch />} />
           </Routes>
