@@ -22,28 +22,10 @@ function ViewMatch() {
               debris.
             </p>
           </div>
-          <div className="item-info">
-            <p className="name">Bidder's range</p>
-            <div className="range">
-              <p>X</p>
-              <p>Y</p>
-            </div>
-          </div>
-          <div className="item-info-2">
-            <p className="name">Your range</p>
-            <div className="range">
-              <p>X</p>
-              <p>Y</p>
-            </div>
-          </div>
-          <div className="item-info">
-            <p className="name">Proposal price</p>
-            <form>
-              <input className="input"></input>
-            </form>
-          </div>
+          <p className="address">Matched with 0x3b7aP9...</p>
+          <p className="desc-2">Continue your conversation on hashchat.</p>
           <div className="submit-btn">
-            <button>Submit</button>
+            <button>Hashchat</button>
           </div>
         </div>
       </div>

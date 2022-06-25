@@ -1,3 +1,5 @@
+@import "./fonts.css";
+
 .main-text-container-2 {
   height: fit-content;
   width: 325px;
@@ -25,4 +27,26 @@
 .range {
   display: flex;
   gap: 60px;
+}
+
+.address {
+  text-align: center;
+  font-family: "med";
+  font-size: 20px;
+  margin: 0px;
+}
+
+.cta {
+  text-align: center;
+  font-family: "reg";
+  font-size: 16px;
+  margin: 5px;
+}
+
+.desc-2 {
+  font-size: 12px;
+  font-family: "reg";
+  margin: 0px;
+  text-align: center;
+  margin-bottom: 10px;
 }

@@ -115,8 +115,9 @@ function ConnectWallet() {
         </div>
       </div>
       {getResult && (
-        <div className="alert alert-secondary mt-2" role="alert">
-          <pre>{getResult}</pre>
+        <div className="modal">
+          <h2 className="submitted">Bid Submitted</h2>
+          <p>You will be notified if there is a match.</p>
         </div>
       )}
     </div>
