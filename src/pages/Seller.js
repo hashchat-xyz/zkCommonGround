@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 
-
 function Seller() {
   const baseURL = "http://127.0.0.1:5000/";
 
@@ -23,7 +22,7 @@ function Seller() {
 
   const fortmatResponse = (res) => {
     return JSON.stringify(res, null, 2);
-  }
+  };
 
   async function getBuyerpk() {
     try {
@@ -45,7 +44,6 @@ function Seller() {
         },
         length: res.headers.get("Content-Length"),
         data: data,
-
       };
 
       setGetResult(fortmatResponse(result));
@@ -85,7 +83,6 @@ function Seller() {
     }
   }
 
-
   async function setSellerPrice() {
     const id = get_sid.current.value;
 
@@ -116,8 +113,6 @@ function Seller() {
       }
     }
   }
-
-
 
   async function postData() {
     const postData = {
@@ -198,9 +193,9 @@ function Seller() {
   async function postDataZ() {
     const postData = {
       zval: z.current.value,
-      pval: p.current.value
+      pval: p.current.value,
     };
-    
+
     try {
       const res = await fetch(`${baseURL}seller/deal_or_nodeal`, {
         method: "post",
@@ -233,16 +228,15 @@ function Seller() {
     }
   }
 
-
   const clearPostOutput = () => {
     setPostResult(null);
-  }
+  };
   const clearPostOutputCN = () => {
     setPostResultCN(null);
-  }
+  };
   const clearPostOutputZ = () => {
     setPostResultZ(null);
-  }
+  };
 
   return (
     <div id="app" className="container my-3">
@@ -251,22 +245,46 @@ function Seller() {
       <div className="card mt-3">
         <div className="card-header">React Fetch GET</div>
         <div className="card-body">
-        <button className="btn btn-sm btn-primary" onClick={getBuyerpk}>Get Buyer PK</button>
+          <button className="btn btn-sm btn-primary" onClick={getBuyerpk}>
+            Get Buyer PK
+          </button>
 
           <div className="input-group input-group-sm">
-
-            <input type="text" ref={get_bid} className="form-control ml-2" placeholder="bId" />
+            <input
+              type="text"
+              ref={get_bid}
+              className="form-control ml-2"
+              placeholder="bId"
+            />
             <div className="input-group-append">
-              <button className="btn btn-sm btn-primary" onClick={setBuyerPrice}>Set Buyers Price</button>
+              <button
+                className="btn btn-sm btn-primary"
+                onClick={setBuyerPrice}
+              >
+                Set Buyers Price
+              </button>
             </div>
-            <input type="text" ref={get_sid} className="form-control ml-2" placeholder="sId" />
+            <input
+              type="text"
+              ref={get_sid}
+              className="form-control ml-2"
+              placeholder="sId"
+            />
             <div className="input-group-append">
-              <button className="btn btn-sm btn-primary" onClick={setSellerPrice}>Set Sellers Price</button>
+              <button
+                className="btn btn-sm btn-primary"
+                onClick={setSellerPrice}
+              >
+                Set Sellers Price
+              </button>
             </div>
-            
           </div>
-          
-          { getResult && <div className="alert alert-secondary mt-2" role="alert"><pre>{getResult}</pre></div> }
+
+          {getResult && (
+            <div className="alert alert-secondary mt-2" role="alert">
+              <pre>{getResult}</pre>
+            </div>
+          )}
         </div>
       </div>
 
@@ -274,15 +292,36 @@ function Seller() {
         <div className="card-header">Post Public Key to Seller</div>
         <div className="card-body">
           <div className="form-group">
-            <input type="text" className="form-control" ref={pk_e} placeholder="Public Key e" />
+            <input
+              type="text"
+              className="form-control"
+              ref={pk_e}
+              placeholder="Public Key e"
+            />
           </div>
           <div className="form-group">
-            <input type="text" className="form-control" ref={pk_n} placeholder="Public Key n" />
+            <input
+              type="text"
+              className="form-control"
+              ref={pk_n}
+              placeholder="Public Key n"
+            />
           </div>
-          <button className="btn btn-sm btn-primary" onClick={postData}>Post Data for C N outputs</button>
-          <button className="btn btn-sm btn-warning ml-2" onClick={clearPostOutput}>Clear</button>
+          <button className="btn btn-sm btn-primary" onClick={postData}>
+            Post Data for C N outputs
+          </button>
+          <button
+            className="btn btn-sm btn-warning ml-2"
+            onClick={clearPostOutput}
+          >
+            Clear
+          </button>
 
-          { postResult && <div className="alert alert-secondary mt-2" role="alert"><pre>{postResult}</pre></div> }
+          {postResult && (
+            <div className="alert alert-secondary mt-2" role="alert">
+              <pre>{postResult}</pre>
+            </div>
+          )}
         </div>
       </div>
 
@@ -290,15 +329,36 @@ function Seller() {
         <div className="card-header">Post C N to buyer</div>
         <div className="card-body">
           <div className="form-group">
-            <input type="text" className="form-control" ref={c} placeholder="c component" />
+            <input
+              type="text"
+              className="form-control"
+              ref={c}
+              placeholder="c component"
+            />
           </div>
           <div className="form-group">
-            <input type="text" className="form-control" ref={n} placeholder="N" />
+            <input
+              type="text"
+              className="form-control"
+              ref={n}
+              placeholder="N"
+            />
           </div>
-          <button className="btn btn-sm btn-primary" onClick={postDataCN}>Post C N to buyer</button>
-          <button className="btn btn-sm btn-warning ml-2" onClick={clearPostOutputCN}>Clear</button>
+          <button className="btn btn-sm btn-primary" onClick={postDataCN}>
+            Post C N to buyer
+          </button>
+          <button
+            className="btn btn-sm btn-warning ml-2"
+            onClick={clearPostOutputCN}
+          >
+            Clear
+          </button>
 
-          { postResultCN && <div className="alert alert-secondary mt-2" role="alert"><pre>{postResultCN}</pre></div> }
+          {postResultCN && (
+            <div className="alert alert-secondary mt-2" role="alert">
+              <pre>{postResultCN}</pre>
+            </div>
+          )}
         </div>
       </div>
 
@@ -306,20 +366,38 @@ function Seller() {
         <div className="card-header">Post Z to seller for answer</div>
         <div className="card-body">
           <div className="form-group">
-            <input type="textarea" className="form-control" ref={z} placeholder="z array in json form {data:['4432','234']}" />
+            <input
+              type="textarea"
+              className="form-control"
+              ref={z}
+              placeholder="z array in json form {data:['4432','234']}"
+            />
           </div>
           <div className="form-group">
-            <input type="text" className="form-control" ref={p} placeholder="p" />
+            <input
+              type="text"
+              className="form-control"
+              ref={p}
+              placeholder="p"
+            />
           </div>
-          <button className="btn btn-sm btn-primary" onClick={postDataZ}>Post Z P to Seller for Answer</button>
-          <button className="btn btn-sm btn-warning ml-2" onClick={clearPostOutputZ}>Clear</button>
+          <button className="btn btn-sm btn-primary" onClick={postDataZ}>
+            Post Z P to Seller for Answer
+          </button>
+          <button
+            className="btn btn-sm btn-warning ml-2"
+            onClick={clearPostOutputZ}
+          >
+            Clear
+          </button>
 
-          { postResultZ && <div className="alert alert-secondary mt-2" role="alert"><pre>{postResultZ}</pre></div> }
+          {postResultZ && (
+            <div className="alert alert-secondary mt-2" role="alert">
+              <pre>{postResultZ}</pre>
+            </div>
+          )}
         </div>
       </div>
-
-
- 
     </div>
   );
 }

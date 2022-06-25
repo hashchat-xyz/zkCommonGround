@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import "../styles/connectwallet.css";
 import flag from "../images/flag.jpeg";
@@ -21,13 +21,48 @@ function ConnectWallet() {
     setHigh(e.target.value);
   };
 
-  const handleSubmit = () => {
-    navigate("/home");
-  };
-
   const handleNoti = () => {
     setNoti(!noti);
   };
+
+  const baseURL = "http://127.0.0.1:5000/";
+  const get_sid = useRef(null);
+  const [getResult, setGetResult] = useState(null);
+  const fortmatResponse = (res) => {
+    return JSON.stringify(res, null, 2);
+  };
+
+  async function setSellerPrice() {
+    const id = get_sid.current.value;
+    // navigate("/home");
+
+    if (id) {
+      try {
+        const res = await fetch(`${baseURL}seller/${id}`);
+
+        if (!res.ok) {
+          const message = `An error has occured: ${res.status} - ${res.statusText}`;
+          throw new Error(message);
+        }
+
+        const data = await res.json();
+
+        const result = {
+          data: data,
+          status: res.status,
+          statusText: res.statusText,
+          headers: {
+            "Content-Type": res.headers.get("Content-Type"),
+            "Content-Length": res.headers.get("Content-Length"),
+          },
+        };
+
+        setGetResult(fortmatResponse(result));
+      } catch (err) {
+        setGetResult(err.message);
+      }
+    }
+  }
 
   return (
     <div className="connect-wallet-container">
@@ -61,7 +96,11 @@ function ConnectWallet() {
           <div className="item-info">
             <p className="name">Lowest acceptable price</p>
             <form>
-              <input className="input" onChange={handleLow}></input>
+              <input
+                className="input"
+                ref={get_sid}
+                onChange={handleLow}
+              ></input>
             </form>
           </div>
           <div className="item-info">
@@ -71,10 +110,15 @@ function ConnectWallet() {
             </form>
           </div>
           <div className="submit-btn">
-            <button onClick={handleSubmit}>Submit</button>
+            <button onClick={setSellerPrice}>Submit</button>
           </div>
         </div>
       </div>
+      {getResult && (
+        <div className="alert alert-secondary mt-2" role="alert">
+          <pre>{getResult}</pre>
+        </div>
+      )}
     </div>
   );
 }
