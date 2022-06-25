@@ -1,19 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/home.css";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import flag from "../images/flag.jpeg";
 import { useNavigate } from "react-router-dom";
+import dot from "../images/dot.svg";
 
 function Home() {
   let navigate = useNavigate();
+  const [noti, setNoti] = useState(false);
 
   const handler = () => {
     navigate("/offerbid");
   };
+
+  const handleNoti = () => {
+    setNoti(!noti);
+  };
+
+  const matchHandler = () => {
+    navigate("/viewmatch");
+  };
+
   return (
     <div className="home-container">
       <div className="top-container">
         <ConnectButton showBalance={false} />
+        <button className="noti" onClick={handleNoti}>
+          Notifications
+        </button>
+        {noti && (
+          <div className="noti-bar">
+            <div className="noti-item" onClick={matchHandler}>
+              <img className="dot" src={dot} alt="dot"></img>
+              <p className="new-offer-text">New Offer</p>
+            </div>
+          </div>
+        )}
       </div>
       <div className="home-main-container">
         <h2 className="title">Find an asset</h2>

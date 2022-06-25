@@ -3,10 +3,14 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import "../styles/connectwallet.css";
 import flag from "../images/flag.jpeg";
 import { useNavigate } from "react-router-dom";
+import "../styles/connectwallet.css";
+import dot from "../images/dot.svg";
 
 function ConnectWallet() {
   const [low, setLow] = useState("");
   const [high, setHigh] = useState("");
+  const [noti, setNoti] = useState(false);
+
   let navigate = useNavigate();
 
   const handleLow = (e) => {
@@ -21,10 +25,25 @@ function ConnectWallet() {
     navigate("/home");
   };
 
+  const handleNoti = () => {
+    setNoti(!noti);
+  };
+
   return (
     <div className="connect-wallet-container">
       <div className="top-container">
         <ConnectButton showBalance={false} />
+        <button className="noti" onClick={handleNoti}>
+          Notifications
+        </button>
+        {noti && (
+          <div className="noti-bar">
+            <div className="noti-item">
+              <img className="dot" src={dot} alt="dot"></img>
+              <p className="new-offer-text">New Offer</p>
+            </div>
+          </div>
+        )}
       </div>
       <div className="title-container">
         <h2 className="title">List an asset</h2>
