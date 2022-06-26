@@ -240,14 +240,6 @@ function Buyer() {
               className="form-control ml-2"
               placeholder="sId"
             />
-            <div className="input-group-append">
-              <button
-                className="btn btn-sm btn-primary"
-                onClick={setSellerPrice}
-              >
-                Set Sellers Price
-              </button>
-            </div>
           </div>
 
           {getResult && (
