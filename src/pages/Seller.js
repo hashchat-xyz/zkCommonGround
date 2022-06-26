@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 
 function Seller() {
-  const baseURL = "http://127.0.0.1:5000/";
+  const baseURL = "https://protected-brook-21952.herokuapp.com";
 
   const get_bid = useRef(null);
   const get_sid = useRef(null);
@@ -88,7 +88,7 @@ function Seller() {
 
     if (id) {
       try {
-        const res = await fetch(`${baseURL}seller/${id}`);
+        const res = await fetch(`${baseURL}/seller/${id}`);
 
         if (!res.ok) {
           const message = `An error has occured: ${res.status} - ${res.statusText}`;
@@ -121,7 +121,7 @@ function Seller() {
     };
 
     try {
-      const res = await fetch(`${baseURL}seller/getcn`, {
+      const res = await fetch(`${baseURL}/seller/getcn`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -159,7 +159,7 @@ function Seller() {
     };
 
     try {
-      const res = await fetch(`${baseURL}buyer/getz`, {
+      const res = await fetch(`${baseURL}/buyer/getz`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -197,7 +197,7 @@ function Seller() {
     };
 
     try {
-      const res = await fetch(`${baseURL}seller/deal_or_nodeal`, {
+      const res = await fetch(`${baseURL}/seller/deal_or_nodeal`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",
