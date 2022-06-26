@@ -4,7 +4,6 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import "../styles/connectwallet.css";
 import flag from "../images/flag.jpeg";
 import { useNavigate } from "react-router-dom";
-import "../styles/connectwallet.css";
 import dot from "../images/dot.svg";
 
 function ConnectWallet() {
@@ -117,7 +116,7 @@ function ConnectWallet() {
       </div>
       {getResult && (
         <div className="modal">
-          <h2 className="submitted">Bid Submitted</h2>
+          <h2 className="submitted" style={{textAlign: "center"}}>Hidden Bid Submitted (never shown to anyone)</h2>
           <p>You will be notified if there is a match.</p>
         </div>
       )}

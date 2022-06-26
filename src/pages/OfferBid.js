@@ -4,7 +4,8 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import dot from "../images/dot.svg";
 import flag from "../images/flag.jpeg";
 import { useNavigate } from "react-router-dom";
-import "../styles/offerbid.css";
+// import "../styles/offerbid.css";
+import "../styles/connectwallet.css";
 
 function OfferBid() {
   const [low, setLow] = useState("");
@@ -33,7 +34,7 @@ function OfferBid() {
   // const get_sid = useRef(null);
   const [getResult, setGetResult] = useState(null);
   const fortmatResponse = (res) => {
-    return res;
+    return JSON.stringify(res, null, 2);
   };
 
   async function setRunBuyer() {
@@ -59,6 +60,8 @@ function OfferBid() {
             "Content-Length": res.headers.get("Content-Length"),
           },
         };
+
+        console.log(result);
 
         setGetResult(fortmatResponse(result));
       } catch (err) {
@@ -114,10 +117,11 @@ function OfferBid() {
           </div>
         </div>
         {getResult && (
-            <div className="alert alert-secondary mt-2" role="alert">
-              <pre>{getResult}</pre>
-            </div>
-          )}
+          <div className="modal">
+            <h2 className="submitted">{getResult.data}</h2>
+            <p>Result: {getResult.data} Raw json: {getResult}</p>
+          </div>
+        )}
       </div>
     </div>
   );
