@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import dot from "../images/dot.svg";
