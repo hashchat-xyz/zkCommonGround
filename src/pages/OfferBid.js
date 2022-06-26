@@ -105,6 +105,7 @@ function OfferBid() {
               The United States flag on the moon. Flag pole may contain moon
               debris.
             </p>
+            <p> LOCAL PICKUP ONLY </p>
           </div>
           <div className="item-info">
             <p className="name">Lowest Buy Price</p>
@@ -124,9 +125,15 @@ function OfferBid() {
         </div>
         {getResult && (
           <div className="modal">
-            <h2 className="submitted">{deal}</h2>
-            <p>Result: {deal ? "DEAL" : "NO DEAL"}</p> 
-            <p>Raw json: {getResult}</p>
+            {/* <h2 className="submitted">{deal}</h2> */}
+            <p>Result: {deal ? "DEAL" : "NO DEAL"}</p>
+            <p>No pricing information has been shared or will be shared</p>
+            {deal && (<p className="address">Matched with 0x3b7aP9...</p>)}
+            <p className="desc-2">Continue your conversation on hashchat.</p>
+            <div className="submit-btn">
+              <a href="https://betav1.hashchat.xyz"><button>Hashchat</button></a>
+            </div>
+            {/* <p>Raw json: {getResult}</p> */}
           </div>
         )}
       </div>

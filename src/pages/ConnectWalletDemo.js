@@ -5,6 +5,7 @@ import "../styles/connectwallet.css";
 import flag from "../images/flag.jpeg";
 import { useNavigate } from "react-router-dom";
 import dot from "../images/dot.svg";
+// import ShowAndHidePassword from "../components/ShowAndHidePassword";
 
 function ConnectWallet() {
   const [low, setLow] = useState("");
@@ -97,10 +98,12 @@ function ConnectWallet() {
           <div className="item-info">
             <p className="name">Lowest price you will accept</p>
             <form>
+              {/* <ShowAndHidePassword /> */}
               <input
                 className="input"
                 ref={get_sid}
                 onChange={handleLow}
+                // type="password"
               ></input>
             </form>
           </div>
