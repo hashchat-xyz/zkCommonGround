@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useRef, useState } from "react";
 
 function Seller() {
@@ -252,20 +253,6 @@ function Seller() {
           <div className="input-group input-group-sm">
             <input
               type="text"
-              ref={get_bid}
-              className="form-control ml-2"
-              placeholder="bId"
-            />
-            <div className="input-group-append">
-              <button
-                className="btn btn-sm btn-primary"
-                onClick={setBuyerPrice}
-              >
-                Set Buyers Price
-              </button>
-            </div>
-            <input
-              type="text"
               ref={get_sid}
               className="form-control ml-2"
               placeholder="sId"
@@ -308,7 +295,7 @@ function Seller() {
             />
           </div>
           <button className="btn btn-sm btn-primary" onClick={postData}>
-            Post Data for C N outputs
+            Post Pubkey to generate C N outputs
           </button>
           <button
             className="btn btn-sm btn-warning ml-2"

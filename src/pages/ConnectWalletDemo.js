@@ -26,7 +26,7 @@ function ConnectWallet() {
     setNoti(!noti);
   };
 
-  const baseURL = "http://127.0.0.1:5000/";
+  const baseURL = "https://protected-brook-21952.herokuapp.com";
   const get_sid = useRef(null);
   const [getResult, setGetResult] = useState(null);
   const fortmatResponse = (res) => {
@@ -39,7 +39,7 @@ function ConnectWallet() {
 
     if (id) {
       try {
-        const res = await fetch(`${baseURL}seller/${id}`);
+        const res = await fetch(`${baseURL}/seller/${id}`);
 
         if (!res.ok) {
           const message = `An error has occured: ${res.status} - ${res.statusText}`;

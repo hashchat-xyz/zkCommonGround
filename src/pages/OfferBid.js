@@ -28,6 +28,46 @@ function OfferBid() {
     setNoti(!noti);
   };
 
+
+  const baseURL = "https://protected-brook-21952.herokuapp.com";
+  // const get_sid = useRef(null);
+  const [getResult, setGetResult] = useState(null);
+  const fortmatResponse = (res) => {
+    return res;
+  };
+
+  async function setRunBuyer() {
+    const id = high;
+
+    if (id) {
+      try {
+        const res = await fetch(`${baseURL}/runbuyer/${id}`);
+
+        if (!res.ok) {
+          const message = `An error has occured: ${res.status} - ${res.statusText}`;
+          throw new Error(message);
+        }
+
+        const data = await res.json();
+
+        const result = {
+          data: data,
+          status: res.status,
+          statusText: res.statusText,
+          headers: {
+            "Content-Type": res.headers.get("Content-Type"),
+            "Content-Length": res.headers.get("Content-Length"),
+          },
+        };
+
+        setGetResult(fortmatResponse(result));
+      } catch (err) {
+        setGetResult(err.message);
+      }
+    }
+  }
+
+
   return (
     <div className="connect-wallet-container">
       <div className="top-container">
@@ -70,9 +110,14 @@ function OfferBid() {
             </form>
           </div>
           <div className="submit-btn">
-            <button onClick={handleSubmit}>Submit</button>
+            <button onClick={setRunBuyer}>Submit</button>
           </div>
         </div>
+        {getResult && (
+            <div className="alert alert-secondary mt-2" role="alert">
+              <pre>{getResult}</pre>
+            </div>
+          )}
       </div>
     </div>
   );
