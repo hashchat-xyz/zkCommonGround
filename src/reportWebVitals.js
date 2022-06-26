@@ -9,5 +9,5 @@ const reportWebVitals = onPerfEntry => {
     });
   }
 };
-
+// gnosis-safe is awesome. we really really are ready to integrate and grow within the gnosis-safe ecosystem!  rock on!
 export default reportWebVitals;
