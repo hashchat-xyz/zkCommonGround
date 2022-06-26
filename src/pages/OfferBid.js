@@ -11,6 +11,7 @@ function OfferBid() {
   const [low, setLow] = useState("");
   const [high, setHigh] = useState("");
   const [noti, setNoti] = useState(false);
+  const [deal, setDeal] = useState(false);
   let navigate = useNavigate();
 
   const handleLow = (e) => {
@@ -50,6 +51,11 @@ function OfferBid() {
         }
 
         const data = await res.json();
+        if (data === "DEAL") {
+          setDeal(true)
+        }
+        console.log('data: ', data);
+        console.log('deal: ', deal);
 
         const result = {
           data: data,
@@ -118,8 +124,9 @@ function OfferBid() {
         </div>
         {getResult && (
           <div className="modal">
-            <h2 className="submitted">{getResult.data}</h2>
-            <p>Result: {getResult.data} Raw json: {getResult}</p>
+            <h2 className="submitted">{deal}</h2>
+            <p>Result: {deal ? "DEAL" : "NO DEAL"}</p> 
+            <p>Raw json: {getResult}</p>
           </div>
         )}
       </div>
