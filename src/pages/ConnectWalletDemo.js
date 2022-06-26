@@ -92,9 +92,10 @@ function ConnectWallet() {
               The United States flag on the moon. Flag pole may contain moon
               debris.
             </p>
+            <p> LOCAL PICKUP ONLY </p>
           </div>
           <div className="item-info">
-            <p className="name">Lowest acceptable price</p>
+            <p className="name">Lowest price you will accept</p>
             <form>
               <input
                 className="input"
@@ -104,7 +105,7 @@ function ConnectWallet() {
             </form>
           </div>
           <div className="item-info">
-            <p className="name">Highest acceptable price</p>
+            <p className="name">Highest price you would accept (less than infinity)</p>
             <form>
               <input className="input" onChange={handleHigh}></input>
             </form>

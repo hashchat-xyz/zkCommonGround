@@ -107,13 +107,13 @@ function OfferBid() {
             </p>
           </div>
           <div className="item-info">
-            <p className="name">Lowest potential bid</p>
+            <p className="name">Lowest Buy Price</p>
             <form>
               <input className="input" onChange={handleLow}></input>
             </form>
           </div>
           <div className="item-info">
-            <p className="name">Highest potential bid</p>
+            <p className="name">Highest Buy Price</p>
             <form>
               <input className="input" onChange={handleHigh}></input>
             </form>
